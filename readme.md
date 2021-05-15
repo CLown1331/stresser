@@ -2,9 +2,9 @@
 
 _Stress test your http endpoint in a cool way_
 
-![Overview](https://raw.githubusercontent.com/CLown1331/stresser/master/logo/logo.png)
+Fork of [stresser](https://github.com/legraphista/stresser)
 
-Fork of [stresser](https://raw.githubusercontent.com/legraphista/stresser)
+![Overview](https://raw.githubusercontent.com/CLown1331/stresser/master/logo/logo.png)
 
 ## Usage
 
