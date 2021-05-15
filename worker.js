@@ -63,6 +63,9 @@ const SETUP = (data) => {
         method: config.method,
         timeout: config.timeout
     };
+    if (!!config.payloadType) {
+        requestOptions[config.payloadType] = config.payloadData;
+    }
     concurrent = config.concurrentPerCPU;
 };
 
@@ -101,6 +104,7 @@ const _doSingleRequest = (idx) => {
 
         const req = _requests[idx];
         req.time = Date.now() - req.start;
+        
         if (!err) {
             _statsForSecond.time += req.time;
             _statsForSecond.cnt++;
@@ -125,7 +129,6 @@ const _doSingleRequest = (idx) => {
         }
 
         req.code = http.statusCode;
-
         _statsForSecond.code[req.code.toString()[0]]++;
         config.verbose.c && console.log('HTTP:', req.code);
 

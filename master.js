@@ -184,6 +184,7 @@ const _finish = () => {
         display(config.html, _requests, statsStr, _secondHistory, config.url);
     }
 
+    console.log('Query Per Second:', stats.cnt / _second);
     setTimeout(() => process.exit(0), 100);
 };
 
