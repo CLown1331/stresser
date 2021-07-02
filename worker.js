@@ -61,7 +61,9 @@ const SETUP = (data) => {
     requestOptions = {
         url: config.url,
         method: config.method,
-        timeout: config.timeout
+        timeout: config.timeout,
+        headers: config.headers,
+        auth: config.auth
     };
     if (!!config.payloadType) {
         requestOptions[config.payloadType] = config.payloadData;
@@ -104,7 +106,6 @@ const _doSingleRequest = (idx) => {
 
         const req = _requests[idx];
         req.time = Date.now() - req.start;
-        
         if (!err) {
             _statsForSecond.time += req.time;
             _statsForSecond.cnt++;

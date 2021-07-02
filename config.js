@@ -48,6 +48,8 @@ const count = config.count || 10;
 const concurrent = config.concurrent || 100;
 const method = config.method || 'get';
 const payloadType = config.payloadType || null;
+const headers = config.headers || {};
+const auth = config.auth || null
 
 const _v = argv.v || argv.verbose || '';
 const verbose = {
@@ -74,7 +76,9 @@ module.exports = {
     CPUs,
     force,
     payloadData,
-    payloadType
+    payloadType,
+    headers,
+    auth
 };
 
 html && console.error('Will output report file to', html);
